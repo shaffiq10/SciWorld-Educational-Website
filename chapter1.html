@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 1: Microorganisms</title>
+<link rel="stylesheet" type="text/css" href="chapter1.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="sciworld-logo.png" alt="SciWorld Logo">
+  </a>
+
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+  <a href="#">CHAPTERS ▾</a>
+  <div class="dropdown-content">
+      <a href="chapter1.html" title="Microorganisms">Chapter 1</a>
+      <a href="chapter2.html" title="Nutrition & Food Technology">Chapter 2</a>
+      <a href="chapter3.html" title="Environmental Sustainability">Chapter 3</a>
+      <a href="chapter4.html" title="Rate of Reaction">Chapter 4</a>
+      <a href="chapter5.html" title="Carbon Compounds">Chapter 5</a>
+      <a href="chapter6.html" title="Electrochemistry">Chapter 6</a>
+      <a href="chapter7.html" title="Light and Optic">Chapter 7</a>
+      <a href="chapter8.html" title="Space Technology">Chapter 8</a>
+  </div>
+</div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+</nav>
+
+<!-- DATE & TIME FIXED -->
+<div class="date-time-box" id="dateTime"></div>
+
+<!-- LEFT COLLAPSIBLE ANCHOR NAV -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">
+    <span class="side-nav-title">Subtopics</span>
+    <span class="side-nav-toggle" id="sideNavToggle">▸</span>
+  </div>
+  <div class="side-nav-links" id="sideNavLinks">
+    <a href="#intro">Introduction to Microorganisms</a>
+    <a href="#beneficial">Beneficial Microorganisms</a>
+    <a href="#disease">Disease Prevention and Treatment Caused by Microorganisms</a>
+  </div>
+</div>
+
+<!-- PARALLAX VIDEO HEADER -->
+<div class="parallax-video">
+  <video autoplay muted loop>
+    <source src="chapter1-bg.mp4" type="video/mp4">
+  </video>
+  <h1 class="parallax-text">CHAPTER 1:<br>MICROORGANISMS</h1>
+</div>
+
+<!-- SUBTOPIC 1 TITLE PARALLAX -->
+<div id="intro" div class="subtopic-title" style="background-image: url('intro1-bg.jpg');">
+  <h1>Introduction to Microorganisms</h1>
+</div>
+<section>
+  <p>
+    Microorganisms are very small living organisms that cannot be seen with the naked eye.
+    A microscope is required to observe them. Microorganisms are found in air, water, soil, and inside living organisms.
+  </p>
+
+  <!-- Classification of Microorganisms Title -->
+  <div class="classification-title">Classification of Microorganisms</div>
+
+  <!-- Classification of Microorganisms Row -->
+  <div class="horizontal-scroll">
+    <div class="scroll-item">
+      <img src="fungi.jpg" alt="Fungi">
+      <div class="scroll-item-label">Fungi</div>
+    </div>
+    <div class="scroll-item">
+      <img src="alga.jpg" alt="Alga">
+      <div class="scroll-item-label">Alga</div>
+    </div>
+    <div class="scroll-item">
+      <img src="protozoa.jpg" alt="Protozoa">
+      <div class="scroll-item-label">Protozoa</div>
+    </div>
+    <div class="scroll-item">
+      <img src="bacteria.jpg" alt="Bacteria">
+      <div class="scroll-item-label">Bacteria</div>
+    </div>
+    <div class="scroll-item">
+      <img src="virus.jpg" alt="Virus">
+      <div class="scroll-item-label">Virus</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBTOPIC 2 TITLE PARALLAX -->
+<div id="beneficial" div class="subtopic-title" style="background-image: url('beneficial-bg.jpg');">
+  <h1>Beneficial Microorganisms</h1>
+</div>
+
+<section class="application-section">
+  <p>
+    These are some of the applications of beneficial microorganisms in our daily lives.
+  </p>
+
+  <!-- AGRICULTURE -->
+  <div class="application-group">
+    <h2>Agriculture</h2>
+    <div class="micro-row">
+
+      <div class="micro-card">
+        <img src="bifidobacteria.jpg" alt="Bifidobacteria">
+        <div class="micro-info">
+          <h3>Bifidobacteria sp.</h3>
+          <p>Helps in the digestion process of animals.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="nitrobacter.jpg" alt="Nitrobacter">
+        <div class="micro-info">
+          <h3>Nitrobacter sp.</h3>
+          <p>Nitrifying bacteria that improve soil fertility.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MEDICINE -->
+  <div class="application-group">
+    <h2>Medicine</h2>
+    <div class="micro-row">
+
+      <div class="micro-card">
+        <img src="salmonella.jpg" alt="Salmonella">
+        <div class="micro-info">
+          <h3>Salmonella sp.</h3>
+          <p>Used in the production of vaccines.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="penicillium.jpg" alt="Penicillium chrysogenum">
+        <div class="micro-info">
+          <h3>Penicillium chrysogenum</h3>
+          <p>Produces penicillin antibiotics.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="ecoli.jpg" alt="E. coli">
+        <div class="micro-info">
+          <h3>Recombinant <i>E. coli</i></h3>
+          <p>Produces insulin using recombinant DNA technology.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INDUSTRY -->
+  <div class="application-group">
+    <h2>Industry</h2>
+    <div class="micro-row">
+
+      <div class="micro-card">
+        <img src="yeast.jpg" alt="Yeast">
+        <div class="micro-info">
+          <h3>Yeast</h3>
+          <p>Used in food production such as bread.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="lactobacillus.jpg" alt="Lactobacillus bulgaricus">
+        <div class="micro-info">
+          <h3>Lactobacillus bulgaricus</h3>
+          <p>Used in yogurt and fermented drinks.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="bacillus.jpg" alt="Bacillus subtilis">
+        <div class="micro-info">
+          <h3>Bacillus subtilis</h3>
+          <p>Used in leather processing industries.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUBTOPIC 3 TITLE PARALLAX -->
+<div id="disease" div class="subtopic-title" style="background-image: url('disease-bg.jpg');">
+  <h1>Disease Prevention and Treatment Caused by Microorganisms</h1>
+</div>
+<section>
+  <div class="aseptic-title">Aseptic Technique</div>
+  <p>
+    Aseptic techniques play an important role in the prevention and treatment of diseases
+    caused by microorganisms. These techniques help prevent the spread of pathogens and
+    reduce the risk of infection.
+  </p>
+
+  <div class="aseptic-container">
+<div class="aseptic-card">
+  <div class="aseptic-text">
+    <h3>1. Sterilisation</h3>
+    <p>
+      The process of destroying all forms of microorganisms, including bacteria,
+      viruses, and spores.
+    </p>
+  </div>
+  <div class="aseptic-image">
+    <img src="sterilisation.jpg" alt="Sterilisation">
+  </div>
+</div>
+
+<div class="aseptic-card">
+  <div class="aseptic-text">
+    <h3>2. Boiling</h3>
+    <p>
+      Using high temperature to kill or reduce the number of microorganisms in water
+      or objects.
+    </p>
+  </div>
+  <div class="aseptic-image">
+    <img src="boiling.jpg" alt="Boiling">
+  </div>
+</div>
+
+<div class="aseptic-card">
+  <div class="aseptic-text">
+    <h3>3. Use of Antiseptics</h3>
+    <p>
+      Applying chemicals on living tissues such as skin or wounds to inhibit or kill
+      pathogens.
+    </p>
+  </div>
+  <div class="aseptic-image">
+    <img src="antiseptic.jpg" alt="Antiseptics">
+  </div>
+</div>
+
+<div class="aseptic-card">
+  <div class="aseptic-text">
+    <h3>4. Use of Disinfectants</h3>
+    <p>
+      Using strong chemical agents on non-living surfaces to destroy microorganisms.
+    </p>
+  </div>
+  <div class="aseptic-image">
+    <img src="disinfectant.jpg" alt="Disinfectants">
+  </div>
+</div>
+
+<div class="aseptic-card">
+  <div class="aseptic-text">
+    <h3>5. Use of Radiation</h3>
+    <p>
+      Exposing objects to radiation such as ultraviolet (UV) light to kill
+      microorganisms and maintain sterility.
+    </p>
+  </div>
+  <div class="aseptic-image">
+    <img src="radiation.jpg" alt="Radiation">
+  </div>
+</div>
+</section>
+
+<footer>Copyright &copy; SciWorld 2026</footer>
+
+<script>
+function toggleSideNav() {
+  const sideNav = document.getElementById('sideNav');
+  sideNav.classList.toggle('side-nav-collapsed');
+}
+</script>
+
+<script src="datetime.js"></script>
+
+</body>
+</html>

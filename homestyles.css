@@ -1,0 +1,142 @@
+/* General Styles */
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #0cf0f0;
+}
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #000;
+  color: #fff;
+}
+.logo.playing img {
+  filter: drop-shadow(0 0 10px #04AA6D);
+}
+
+img {
+  max-width: 100%; height: auto;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center; padding: 12px 0; z-index: 9999;
+}
+nav a {
+  color: #fff; text-decoration: none; font-weight: bold;
+  margin: 0 15px; padding: 8px 12px; border-radius: 6px;
+  transition: 0.3s;
+}
+nav a:hover {
+  background-color: #fff; color: #000; transform: scale(1.1);
+}
+nav .logo {
+  position: absolute; left: 15px; top: 50%;
+  transform: translateY(-50%);
+}
+nav .logo img {
+  height: 35px;
+}
+nav .dropdown {
+  display: inline-block; position: relative;
+}
+nav .dropdown-content {
+  display: none; position: absolute;
+  background-color: rgba(0,0,0,0.9); min-width: 140px;
+  top: 100%; left: 50%; transform: translateX(-50%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7); border-radius: 6px; z-index: 9999;
+}
+nav .dropdown-content a {
+  display: block; color: #fff; padding: 10px 12px;
+  text-decoration: none; text-align: left;
+}
+nav .dropdown-content a:hover {
+  background-color: #fff; color: #000;
+}
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+nav .dropdown > a {
+  cursor: pointer;
+}
+
+/* Hero Section */
+.subtopic-title {
+  position: relative; height: 60vh;
+  display: flex; align-items: center; justify-content: center;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+.subtopic-title::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.subtopic-title h1 {
+  position: relative; z-index: 1;
+  font-size: 2.5em; color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Sections */
+section {
+  max-width: 100%; margin: auto; text-align: center; padding: 15 15px;
+  background-color: #000000;
+}
+ul.centered-list {
+  margin: 0 auto; padding: 0; max-width: 900px;
+  list-style-position: inside;
+}
+ul.centered-list li {
+  margin-bottom: 12px;
+}
+
+/* Chapter Overview Scroll */
+.classification-title {
+  text-align: center; font-size: 1.5em; font-weight: bold;
+  margin: 40px 0 20px 0;
+}
+.horizontal-scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  width: 100%; display: flex; justify-content: center;
+  gap: 20px; margin: 20px 0; overflow-x: auto;
+}
+.scroll-item {
+  width: 200px; position: relative; border-radius: 12px;
+  overflow: hidden; flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.scroll-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.scroll-item-label {
+  position: absolute; bottom: 0; width: 100%;
+  background: rgba(0,0,0,0.8); color: #fff;
+  text-align: center; font-weight: bold;
+  padding: 8px 0; box-sizing: border-box;
+}
+.scroll-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* DATE & TIME FIXED */
+.date-time-box {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  background: rgba(0,0,0,0.75);
+  color: #00cfff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0,204,255,0.4);
+  z-index: 10000;
+  text-align: right;
+}

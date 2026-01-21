@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 8: Space Technology</title>
+<link rel="stylesheet" type="text/css" href="chapter8.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="sciworld-logo.png" alt="SciWorld Logo">
+  </a>
+
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html" title="Microorganisms">Chapter 1</a>
+      <a href="chapter2.html" title="Nutrition & Food Technology">Chapter 2</a>
+      <a href="chapter3.html" title="Environmental Sustainability">Chapter 3</a>
+      <a href="chapter4.html" title="Rate of Reaction">Chapter 4</a>
+      <a href="chapter5.html" title="Carbon Compounds">Chapter 5</a>
+      <a href="chapter6.html" title="Electrochemistry">Chapter 6</a>
+      <a href="chapter7.html" title="Light and Optic">Chapter 7</a>
+      <a href="chapter8.html" title="Space Technology">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+</nav>
+
+<!-- DATE & TIME FIXED -->
+<div class="date-time-box" id="dateTime"></div>
+
+<!-- LEFT COLLAPSIBLE ANCHOR NAV -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">
+    <span class="side-nav-title">Subtopics</span>
+    <span class="side-nav-toggle" id="sideNavToggle">▸</span>
+  </div>
+<div class="side-nav-links" id="sideNavLinks">
+  <a href="#intro">Introduction to Space Technology</a>
+  <a href="#satellite">Satellites</a>
+  <a href="#gps">Global Positioning System (GPS)</a>
+</div>
+</div>
+
+<!-- PARALLAX HEADER -->
+<div class="parallax-video">
+  <video autoplay muted loop>
+    <source src="chapter8-bg.mp4" type="video/mp4">
+  </video>
+  <h1 class="parallax-text">CHAPTER 8:<br>SPACE TECHNOLOGY</h1>
+</div>
+
+<!-- SUBTOPIC 1 -->
+<div id="intro" class="subtopic-title" style="background-image: url('intro8-bg.jpg');">
+  <h1>Introduction to Space Technology</h1>
+</div>
+<section>
+  <p>
+    Space technology refers to the application of science and technology to explore
+    and utilize outer space. It involves the use of rockets, spacecraft, satellites,
+    and space stations.
+    It plays an important role in improving human life on Earth.
+    It helps in communication, weather forecasting, navigation, scientific research,
+    and understanding the universe.
+  </p>
+</section>
+
+<!-- SUBTOPIC 2 -->
+<div id="satellite" class="subtopic-title" style="background-image: url('satellite-bg.jpg');">
+  <h1>Satellites</h1>
+</div>
+<section>
+  <p>
+    A satellite is an object that orbits around a planet such as the Earth.
+    Satellites can be divided into natural satellites and artificial satellites.
+    Artificial satellites are launched into space using rockets and are designed
+    for specific purposes.
+  </p>
+<h2 style="color:#3e7bffe6; text-shadow: 1px 1px 5px #000;">Types of Satellite Orbits</h2>
+
+  <!-- Orbit Image Container -->
+  <div class="orbit-image-container">
+    <img src="orbit.jpg">
+    <p class="orbit-caption">
+      Illustration of different satellite orbits: GEO, HEO, GTO, MEO, PO, SSO & LEO
+    </p>
+    <p class="orbit-link">
+      Visit <a href="https://www.eoportal.org/other-space-activities/orbit-types#orbitregimes" target="_blank" style="color:#3071ffe6; text-decoration:underline;">eoPortal</a> to learn more about satellite orbits.
+    </p>
+  </div>
+</section>
+
+<!-- SUBTOPIC 3 -->
+<div id="gps" class="subtopic-title" style="background-image: url('gps-bg.jpg');">
+  <h1>Global Positioning System (GPS)</h1>
+</div>
+<section>
+  <p>
+    The Global Positioning System (GPS) is a satellite-based navigation system that allows 
+    users to determine their exact location, speed, and time anywhere on Earth. It is widely 
+    used in vehicles, smartphones, shipping, aviation, and even scientific research. 
+    GPS functions by receiving signals from multiple satellites in space to calculate 
+    accurate positioning.
+  </p>
+
+  <p>
+    The GPS system is divided into three main segments, each playing a critical role in 
+    providing accurate navigation and timing information. These are the three main segments:
+  </p>
+
+  <div class="gps-segment-cards">
+
+    <!-- Space Segment -->
+    <div class="gps-card">
+      <div class="gps-card-icon">🛰️</div>
+      <h3>Space Segment</h3>
+      <p>
+        Composed of orbiting satellites that continuously transmit location and precise 
+        time signals. At least 24 satellites ensure global coverage.
+      </p>
+    </div>
+
+    <!-- Control Segment -->
+    <div class="gps-card">
+      <div class="gps-card-icon">🛰️📡</div>
+      <h3>Control Segment</h3>
+      <p>
+        Ground stations that monitor, manage, and synchronize satellites, 
+        ensuring accurate navigation and timing information.
+      </p>
+    </div>
+
+    <!-- User Segment -->
+    <div class="gps-card">
+      <div class="gps-card-icon">📱</div>
+      <h3>User Segment</h3>
+      <p>
+        Receivers used by devices on Earth to calculate positions by processing 
+        signals from multiple satellites, such as smartphones, cars, ships, and airplanes.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Copyright &copy; SciWorld 2026
+</footer>
+
+<script>
+function toggleSideNav() {
+  const sideNav = document.getElementById('sideNav');
+  sideNav.classList.toggle('side-nav-collapsed');
+}
+</script>
+
+<script src="datetime.js"></script>
+
+</body>
+</html>

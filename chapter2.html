@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 2: Nutrition and Food Technology</title>
+<link rel="stylesheet" type="text/css" href="chapter2.css"> 
+</head>
+<body>
+
+<!------------------------------------------- HTML-------------------------------------------------->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="sciworld-logo.png" alt="SciWorld Logo">
+  </a>
+
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html" title="Microorganisms">Chapter 1</a>
+      <a href="chapter2.html" title="Nutrition & Food Technology">Chapter 2</a>
+      <a href="chapter3.html" title="Environmental Sustainability">Chapter 3</a>
+      <a href="chapter4.html" title="Rate of Reaction">Chapter 4</a>
+      <a href="chapter5.html" title="Carbon Compounds">Chapter 5</a>
+      <a href="chapter6.html" title="Electrochemistry">Chapter 6</a>
+      <a href="chapter7.html" title="Light and Optic">Chapter 7</a>
+      <a href="chapter8.html" title="Space Technology">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+</nav>
+
+<!-- DATE & TIME FIXED -->
+<div class="date-time-box" id="dateTime"></div>
+
+<!-- LEFT COLLAPSIBLE ANCHOR NAV -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">
+    <span class="side-nav-title">Subtopics</span>
+    <span class="side-nav-toggle" id="sideNavToggle">▸</span>
+  </div>
+  <div class="side-nav-links" id="sideNavLinks">
+    <a href="#intro">Introduction to Nutrition</a>
+    <a href="#plant-nutrients">Nutrient Requirements of Plants</a>
+    <a href="#nitrogen-cycle">Nitrogen Cycle</a>
+    <a href="#food-production">Food Production Technology</a>
+    <a href="#food-processing">Food Processing Technology</a>
+    <a href="#health-foods">Health Foods and Supplements</a>
+  </div>
+</div>
+
+<!-- PARALLAX VIDEO HEADER -->
+<div class="parallax-video">
+  <video autoplay muted loop>
+    <source src="chapter2-bg.mp4" type="video/mp4">
+  </video>
+  <h1 class="parallax-text">CHAPTER 2:<br>NUTRITION & FOOD TECHNOLOGY</h1>
+</div>
+
+<!-- SUBTOPIC SECTIONS -->
+<div id="intro" class="subtopic-title" style="background-image: url('intro2-bg.jpg');">
+  <h1>Introduction to Nutrition and Food Technology</h1>
+</div>
+<section>
+  <p>
+    Nutrition is the study of nutrients found in food and their role in maintaining health, growth, and body functions. Nutrients such as carbohydrates, proteins, fats, vitamins, minerals, and water are essential for providing energy, building body tissues, and regulating bodily processes. A balanced diet is important to ensure the body receives all the nutrients it needs to stay healthy.
+  </p>
+  <p>
+Food technology involves the application of scientific knowledge and technology in the production, processing, preservation, and packaging of food. It helps improve food safety, maintain nutritional quality, and extend shelf life. Through food technology, food can be made safer, more convenient, and suitable for consumption by a growing population.
+  </p> 
+</section>
+
+<div id="plant-nutrients" class="subtopic-title" style="background-image: url('plants-bg.jpg');">
+  <h1>Nutrient Requirements of Plants</h1>
+</div>
+<section class="application-section">
+
+  <!-- MACRONUTRIENTS -->
+<p>Apart from humans and animals, plants also require certain nutrients for growth, development, and reproduction. The nutrients required by plants can be classified into two groups, namely macronutrients and micronutrients.</p>
+  <div class="application-group">
+    <h2>Macronutrients</h2>
+
+    <div class="macro-grid">
+      <div class="micro-card">
+        <img src="nitrogen.jpg" alt="Nitrogen">
+        <div class="micro-info">
+          <h3>Nitrogen (N)</h3>
+          <p>Promotes leaf growth and is needed to make proteins and chlorophyll.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="phosphorus.jpg" alt="Phosphorus">
+        <div class="micro-info">
+          <h3>Phosphorus (P)</h3>
+          <p>Supports root development, flowering, and energy transfer.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="potassium.jpg" alt="Potassium">
+        <div class="micro-info">
+          <h3>Potassium (K)</h3>
+          <p>Strengthens plants and improves resistance to diseases.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="calcium.jpg" alt="Calcium">
+        <div class="micro-info">
+          <h3>Calcium (Ca)</h3>
+          <p>Builds strong cell walls and supports new tissue growth.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="magnesium.jpg" alt="Magnesium">
+        <div class="micro-info">
+          <h3>Magnesium (Mg)</h3>
+          <p>Main component of chlorophyll for photosynthesis.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="sulfur.jpg" alt="Sulfur">
+        <div class="micro-info">
+          <h3>Sulfur (S)</h3>
+          <p>Needed for protein formation and enzyme activity.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="carbon.jpg" alt="Carbon">
+        <div class="micro-info">
+          <h3>Carbon (C)</h3>
+          <p>Main element in food produced during photosynthesis.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="oxygen.jpg" alt="Oxygen">
+        <div class="micro-info">
+          <h3>Oxygen (O)</h3>
+          <p>Required for respiration and energy release.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="hydrogen.jpg" alt="Hydrogen">
+        <div class="micro-info">
+          <h3>Hydrogen (H)</h3>
+          <p>Involved in photosynthesis and plant growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MICRONUTRIENTS -->
+  <div class="application-group">
+    <h2>Micronutrients</h2>
+
+    <div class="micro-row">
+      <div class="micro-card">
+        <img src="boron.jpg" alt="Boron">
+        <div class="micro-info">
+          <h3>Boron (B)</h3>
+          <p>Helps cell wall formation and sugar transport.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="iron.jpg" alt="Iron">
+        <div class="micro-info">
+          <h3>Iron (Fe)</h3>
+          <p>Needed for chlorophyll formation and energy transfer.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="copper.jpg" alt="Copper">
+        <div class="micro-info">
+          <h3>Copper (Cu)</h3>
+          <p>Important for enzyme activity and photosynthesis.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="molybdenum.jpg" alt="Molybdenum">
+        <div class="micro-info">
+          <h3>Molybdenum (Mo)</h3>
+          <p>Essential for nitrogen fixation in plants.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="manganese.jpg" alt="Manganese">
+        <div class="micro-info">
+          <h3>Manganese (Mn)</h3>
+          <p>Supports enzyme function and photosynthesis.</p>
+        </div>
+      </div>
+
+      <div class="micro-card">
+        <img src="zinc.jpg" alt="Zinc">
+        <div class="micro-info">
+          <h3>Zinc (Zn)</h3>
+          <p>Needed for growth hormones and enzyme activity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div id="nitrogen-cycle" class="subtopic-title" style="background-image: url('nitrogen-bg.jpg');">
+  <h1>Nitrogen Cycle</h1>
+</div>
+
+<section>
+  <p>The nitrogen cycle is an essential natural process in which nitrogen moves between the atmosphere, soil, plants, and animals. Here are the main stages:</p>
+  
+  <ol class="numbered-cycle">
+    <li>
+      <strong>Nitrogen Fixation:</strong> Nitrogen gas (N₂) from the atmosphere is converted into ammonia (NH₃) by nitrogen-fixing bacteria in the soil or in root nodules of legumes.
+    </li>
+    <li>
+      <strong>Nitrification:</strong> Ammonia is oxidized into nitrites (NO₂⁻) and then into nitrates (NO₃⁻) by nitrifying bacteria, which plants can easily absorb.
+    </li>
+    <li>
+      <strong>Assimilation:</strong> Plants absorb nitrates and use them to synthesize proteins, nucleic acids, and other nitrogen-containing compounds essential for growth.
+    </li>
+    <li>
+      <strong>Ammonification:</strong> Decomposers break down dead organisms and waste products, converting organic nitrogen back into ammonia or ammonium compounds.
+    </li>
+    <li>
+      <strong>Denitrification:</strong> Denitrifying bacteria convert nitrates back into nitrogen gas (N₂), releasing it into the atmosphere and completing the cycle.
+    </li>
+  </ol>
+
+  <p>For a better visual understanding, you can watch this explanatory video on the nitrogen cycle:</p>
+  <div class="video-link">
+    <a href="https://youtu.be/K5EOZenSSB8?si=mkyt6FrdbA6M_a3E" target="_blank" class="yt-link">▶ Watch Nitrogen Cycle Video</a>
+  </div>
+</section>
+
+<div id="food-production" class="subtopic-title" style="background-image: url('production-bg.jpg');">
+  <h1>Food Production Technology</h1>
+</div>
+<section>
+  <p>Food production technology is applied to solve the problem of global food shortages. Among the steps taken in food production technology include:</p>
+  
+  <ul>
+    <li>Improving food quality</li>
+    <li>Increasing the quantity of food production</li>
+    <li>Producing and using quality breeds</li>
+    <li>Using various types of modern technology</li>
+  </ul>
+
+<h2>Ways to Improve the Quality and Quantity of National Food Production</h2>  
+ <div class="feature-list">
+
+  <div class="feature-item">
+    <img src="mafriwal.jpg" alt="Quality Breeds">
+    <div class="feature-text">
+      <h3>Use of Quality Breeds</h3>
+      <p>
+        Using quality breeds such as Mafriwal cattle helps increase meat and milk production,
+        resulting in higher food quality and supply.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-item reverse">
+    <img src="modern.jpg" alt="Modern Technology">
+    <div class="feature-text">
+      <h3>Use of Modern Technology</h3>
+      <p>
+        The use of modern technology such as tractors, automated irrigation systems,
+        and harvesting machines increases efficiency and productivity.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-item">
+    <img src="farmer.jpg" alt="Farmer Education">
+    <div class="feature-text">
+      <h3>Education and Guidance for Farmers</h3>
+      <p>
+        Farmers receive training, workshops, and guidance on modern farming techniques,
+        proper fertilizer use, and pest control methods.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-item reverse">
+    <img src="research.jpg" alt="Research and Development">
+    <div class="feature-text">
+      <h3>Research and Development</h3>
+      <p>
+        Research and development lead to innovative products such as high-yield seeds,
+        disease-resistant crops, and improved farming methods.
+      </p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<div id="food-processing" class="subtopic-title" style="background-image: url('processing-bg.jpg');">
+  <h1>Food Processing Technology</h1>
+</div>
+<section>
+  <p>
+    According to nutritionists, fresh raw food is better to eat because it is healthier for the body. However, not all raw food ingredients can be eaten fresh. Therefore, most raw food ingredients are transformed into other forms through <b>food processing technology</b>. Processed food lasts longer, tastes better, is more attractive and is easier to digest. The following are food processing technologies:
+  </p>
+<div class="food-tech">
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="cooking.jpg" alt="Cooking">
+    </div>
+    <div class="tech-text">
+      <h3>Cooking</h3>
+      <p><b>Method:</b> Food is heated to destroy harmful microorganisms.</p>
+      <p><b>Example:</b> Cooked rice, boiled vegetables</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="fermentation.jpg" alt="Fermentation">
+    </div>
+    <div class="tech-text">
+      <h3>Fermentation</h3>
+      <p><b>Method:</b> Microorganisms convert substances into simpler compounds.</p>
+      <p><b>Example:</b> Yogurt, bread, tapai</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="drying.jpg" alt="Drying">
+    </div>
+    <div class="tech-text">
+      <h3>Dehydration / Drying</h3>
+      <p><b>Method:</b> Water is removed to slow down spoilage.</p>
+      <p><b>Example:</b> Dried fruits, dried fish</p>
+    </div>
+  </div>
+
+   <div class="tech-row">
+    <div class="tech-img">
+      <img src="pasteurization.jpg" alt="Pasteurization">
+    </div>
+    <div class="tech-text">
+      <h3>Pasteurization</h3>
+      <p><b>Method:</b> Food is heated at a specific temperature for a short time to reduce bacteria.</p>
+      <p><b>Example:</b> Milk, fruit juice</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="canning.jpg" alt="Canning">
+    </div>
+    <div class="tech-text">
+      <h3>Canning</h3>
+      <p><b>Method:</b> Food is sealed in airtight containers to prevent contamination.</p>
+      <p><b>Example:</b> Canned sardines, canned fruits</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="freezing.jpg" alt="Freezing">
+    </div>
+    <div class="tech-text">
+      <h3>Freezing</h3>
+      <p><b>Method:</b> Food is stored at very low temperatures to slow microorganism activity.</p>
+      <p><b>Example:</b> Frozen meat, frozen vegetables</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="irradiation.jpg" alt="Irradiation">
+    </div>
+    <div class="tech-text">
+      <h3>Irradiation</h3>
+      <p><b>Method:</b> Food is exposed to radiation to kill bacteria and pests.</p>
+      <p><b>Example:</b> Spices, potatoes</p>
+    </div>
+  </div>
+
+  <div class="tech-row">
+    <div class="tech-img">
+      <img src="vacuum.jpg" alt="Vacuum Packaging">
+    </div>
+    <div class="tech-text">
+      <h3>Vacuum Packaging</h3>
+      <p><b>Method:</b> Air is removed from the packaging to reduce oxidation and spoilage.</p>
+      <p><b>Example:</b> Vacuum-packed meat, coffee</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<div id="health-foods" class="subtopic-title" style="background-image: url('supplements.jpg');">
+  <h1>Health Foods and Nutritional Supplements</h1>
+</div>
+<section>
+  <p>
+    Health foods and nutritional supplements are products designed to support overall health and improve body functions. Health foods focus on providing additional nutritional value that helps maintain physical well-being and prevent health problems.
+  Nutritional supplements supply essential nutrients in concentrated forms to support daily nutritional needs. They are commonly used to complement a balanced diet and should be taken responsibly according to recommended guidelines to ensure safety and effectiveness.
+  </p>
+
+  <div id="health-supplements" class="application-section">
+
+  <h2 style="text-align:center; color: #ff6122;">Health Foods</h2>
+  <div class="food-strip">
+    <div class="food-item">
+      <img src="vegetables.jpg" alt="Vegetables">
+      <p>Vegetables</p>
+    </div>
+    <div class="food-item">
+      <img src="meat.jpg" alt="Meat">
+      <p>Meat</p>
+    </div>
+    <div class="food-item">
+      <img src="fruits.jpg" alt="Fruits">
+      <p>Fruits</p>
+    </div>
+  </div>
+
+  <h2 style="text-align:center; color: #ff6122; margin-top:50px;">Nutritional Supplements</h2>
+  <div class="food-strip">
+    <div class="food-item">
+      <img src="vitamins.jpg" alt="Vitamins">
+      <p>Vitamins</p>
+    </div>
+    <div class="food-item">
+      <img src="protein.jpg" alt="Protein Supplements">
+      <p>Protein Supplements</p>
+    </div>
+    <div class="food-item">
+      <img src="minerals.jpg" alt="Minerals">
+      <p>Minerals</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<footer>Copyright &copy; SciWorld 2026</footer>
+
+<script>
+function toggleSideNav() {
+  const sideNav = document.getElementById('sideNav');
+  sideNav.classList.toggle('side-nav-collapsed');
+}
+</script>
+
+<script src="datetime.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 | Environmental Sustainability</title>
+
+<style>
+/* ===== GENERAL ===== */
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: linear-gradient(to bottom, #2b002b, #000); color: white; }
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed; /* fixed atas page */
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 12px 0;
+  z-index: 9999;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+nav a:hover { background: #fff; color: #000; }
+.logo { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+.logo-img { width: 50px; height: auto; display: block; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* ===== DROPDOWN ===== */
+.dropdown { display: inline-block; position: relative; }
+.dropdown-content { display: none; position: absolute; background: rgba(0,0,0,0.9); min-width: 150px; border-radius: 6px; left: 50%; transform: translateX(-50%); }
+.dropdown-content a { display: block; padding: 10px; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* DATE & TIME FIXED */
+.date-time-box {
+  position: fixed;        /* kekal di skrin */
+  bottom: 15px;           /* jarak dari bawah */
+  right: 20px;            /* jarak dari kanan */
+  background: rgba(0, 0, 0, 0.75);
+  color: #00cfff;         /* warna biru elektrik */
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
+  z-index: 10000;         /* sentiasa atas elemen lain */
+  text-align: right;
+}
+
+/* ===== SEARCH BOX ===== */
+.nav-search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+}
+.nav-search input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  width: 160px;
+}
+.search-results {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: rgba(0,0,0,0.95);
+  border-radius: 6px;
+  width: 220px;
+  display: none;
+  z-index: 10001;
+}
+.search-results a {
+  display: block;
+  padding: 8px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.search-results a:hover { background: white; color: black; }
+
+/* ===== SIDEBAR ===== */
+.side-nav-box {
+  position: fixed;
+  top: 70px; /* start bawah navbar */
+  left: 0;
+  width: 170px;
+  background: rgba(0,0,0,0.7);
+  padding: 12px;
+  z-index: 999;
+}
+.side-nav-header { cursor: pointer; text-align: center; font-weight: bold; color: #d9b3ff; }
+.side-nav-links { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.side-nav-links a { color: white; text-decoration: none; padding: 6px; border-radius: 6px; text-align: center; }
+.side-nav-links a:hover { background: white; color: black; }
+.side-nav-collapsed .side-nav-links { display: none; }
+
+/* ===== PARALLAX VIDEO ===== */
+.parallax-video { height: 500px; position: relative; overflow: hidden; margin-top: 0; }
+.parallax-video video { width: 100%; height: 100%; object-fit: cover; }
+.parallax-video::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.parallax-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; font-weight: bold; text-align: center; z-index: 2; }
+
+/* ===== CONTENT ===== */
+.content { margin-left: 200px; padding: 140px 40px 40px; /* padding-top ≥ navbar height */ }
+
+/* ===== CHAPTER CARD ===== */
+.chapter-card { background: rgba(255,255,255,0.95); color: #2b002b; border-radius: 12px; padding: 20px; margin-bottom: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); }
+
+/* ===== COLUMN GRID ===== */
+.column-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; margin-top: 20px; }
+
+/* ===== SQUARE CARD ===== */
+.square-card { background: rgba(255,255,255,0.95); color: #2b002b; border-radius: 12px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.4); width: 100%; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; padding: 10px; }
+.square-card img { width: 90%; height: 70%; object-fit: cover; border-radius: 12px; margin-bottom: 10px; }
+.square-card h3 { margin: 5px 0; }
+.square-card p { font-size: 14px; color: #444; text-align: center; }
+
+/* ===== TABLE ===== */
+.pollution-table { width: 100%; border-collapse: collapse; }
+.pollution-table th, .pollution-table td { border: 1px solid #ccc; padding: 8px; color: #333; }
+.pollution-table th { background: #e6ccff; }
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><img src="logo.png" alt="SciWorld Logo" class="logo-img"></div>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html" title="Microorganisms">Chapter 1</a>
+      <a href="chapter2.html" title="Nutrition & Food Technology">Chapter 2</a>
+      <a href="chapter3.html" title="Environmental Sustainability">Chapter 3</a>
+      <a href="chapter4.html" title="Rate of Reaction">Chapter 4</a>
+      <a href="chapter5.html" title="Carbon Compounds">Chapter 5</a>
+      <a href="chapter6.html" title="Electrochemistry">Chapter 6</a>
+      <a href="chapter7.html" title="Light and Optic">Chapter 7</a>
+      <a href="chapter8.html" title="Space Technology">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+
+<!-- DATE & TIME FIXED -->
+<div class="date-time-box" id="dateTime"></div>
+
+  <!-- SEARCH BOX -->
+  <div class="nav-search">
+    <input type="text" id="searchInput" placeholder="Search content..." onkeyup="handleSearch()">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">Subtopics ▸</div>
+  <div class="side-nav-links">
+    <a href="#c31">Product Life Cycle</a>
+    <a href="#c32">Environmental Pollution</a>
+    <a href="#c33">Environmental Conservation</a>
+    <a href="#c34">Video Tutorial</a>
+  </div>
+</div>
+
+<!-- PARALLAX VIDEO -->
+<div class="parallax-video">
+  <video autoplay muted loop>
+    <source src="nature.mp4" type="video/mp4">
+  </video>
+  <div class="parallax-text">CHAPTER 3:<br>ENVIRONMENTAL SUSTAINABILITY</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- 3.1 Product Life Cycle -->
+<div class="chapter-card" id="c31">
+  <h2>3.1 Product Life Cycle</h2>
+  <div class="column-grid">
+    <div class="square-card">
+      <img src="carbon foot print.jpeg" alt="Carbon Footprint">
+      <h3>Carbon Footprint</h3>
+      <p>Total greenhouse gases released due to human activities.</p>
+    </div>
+    <div class="square-card">
+      <img src="carbon hand print.jpeg" alt="Carbon Handprint">
+      <h3>Carbon Handprint</h3>
+      <p>Positive actions to reduce carbon emissions.</p>
+    </div>
+    <div class="square-card">
+      <img src="microplastics.jpeg" alt="Microplastics">
+      <h3>Microplastics in the Food Chain</h3>
+      <p>Microplastics enter ecosystems and may affect human health.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 3.2 Environmental Pollution -->
+<div class="chapter-card" id="c32">
+  <h2>3.2 Environmental Pollution</h2>
+  <table class="pollution-table">
+    <tr><th>Type</th><th>Cause & Effect</th></tr>
+    <tr><td>Air Pollution</td><td>Vehicle emissions causing respiratory diseases.</td></tr>
+    <tr><td>Water Pollution</td><td>Sewage and industrial waste polluting rivers.</td></tr>
+    <tr><td>Thermal pollution</td><td>Hot water from factories is released into rivers or seas, increasing water temperature and affecting aquatic life.</td></tr>
+    <tr><td>Land pollution</td><td>Improper disposal of solid waste, chemicals, and pesticides, reducing soil fertility.</td></tr>
+  </table>
+<br>
+<br>
+  <div class="column-grid">
+    <div class="square-card">
+      <img src="ipu.jpeg" alt="Water Pollution Index">
+      <h3>Water Pollution Index (WPI)</h3>
+      <p>Measures water quality based on pollution level.</p>
+    </div>
+    <div class="square-card">
+      <img src="bod.jpeg" alt="Biochemical Oxygen Demand">
+      <h3>Biochemical Oxygen Demand (BOD)</h3>
+      <p>Amount of oxygen required by microorganisms.</p>
+    </div>
+    <div class="square-card">
+      <img src="em.jpeg" alt="Effective Microorganisms">
+      <h3>Effective Microorganisms (EM)</h3>
+      <p>Green technology for treating polluted water.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 3.3 Environmental Conservation -->
+<div class="chapter-card" id="c33">
+  <h2>3.3 Environmental Conservation and Restoration</h2>
+  <div class="column-grid">
+    <div class="square-card">
+      <img src="em 2.jpeg" alt="Negative Emission Technology">
+      <h3>Negative Emission Technology</h3>
+      <p>Negative emission technology refers to methods that remove carbon dioxide from the atmosphere. Examples include large-scale tree planting, carbon capture and storage (CCS), and the use of biochar. 
+         These technologies help reduce the effects of climate change and support long-term environmental sustainability.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 3.4 Video Tutorial -->
+<div class="chapter-card" id="c34">
+  <h2>3.4 Video Tutorial</h2>
+  <div class="column-grid">
+    <div class="square-card">
+      <video width="90%" height="70%" controls>
+        <source src="tutorial.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h3>Environmental Sustainability Tutorial</h3>
+      <p>This tutorial video explains key concepts of environmental sustainability and conservation practices in a simple and engaging way.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+function updateDateTime() {
+  const now = new Date();   // ambil masa sekarang
+
+  const date = now.toLocaleDateString('en-MY', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const time = now.toLocaleTimeString('en-MY', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+
+  document.getElementById('dateTime').innerHTML =
+    date + "<br>" + time;
+}
+
+setInterval(updateDateTime, 1000); // update setiap 1 saat
+updateDateTime();                  // paparkan terus masa load
+</script>
+
+
+function toggleSideNav() { document.getElementById("sideNav").classList.toggle("side-nav-collapsed"); }
+</script>
+
+<script src="search.js"></script>
+</body>
+</html>
+

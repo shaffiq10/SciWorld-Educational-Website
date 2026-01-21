@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6 | Electrochemistry</title>
+<style>
+/* ===== GENERAL ===== */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1a3d;
+  color: #ffffff;
+}
+
+/* ===== VIDEO BACKGROUND FULLSCREEN ===== */
+.video-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+}
+.video-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+  z-index: -1; /* pastikan video belakang text */
+}
+.video-bg h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: #00cfff;
+  text-align: center;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+}
+
+/* DATE & TIME FIXED */
+.date-time-box {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #00cfff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
+  z-index: 10000;
+  text-align: right;
+}
+
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 12px 0;
+  z-index: 9999;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+nav a:hover { background: #fff; color: #000; }
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.logo-img {
+  width: 50px;
+  height: auto;
+  display: block;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* VIDEO TUTORIAL */
+.tutorial-video {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,204,255,0.4);
+}
+
+/* DROPDOWN */
+.dropdown { display: inline-block; position: relative; }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(0,0,0,0.9);
+  min-width: 150px;
+  border-radius: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dropdown-content a { display: block; padding: 10px; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* SEARCH BOX */
+.nav-search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+}
+.nav-search input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  width: 160px;
+}
+.search-results {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: rgba(0,0,0,0.95);
+  border-radius: 6px;
+  width: 220px;
+  display: none;
+  z-index: 10001;
+}
+.search-results a {
+  display: block;
+  padding: 8px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.search-results a:hover { background: white; color: black; }
+
+/* SIDEBAR */
+.side-nav-box {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 170px;
+  background: rgba(0,0,0,0.7);
+  padding: 12px;
+  z-index: 999;
+}
+.side-nav-header {
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  color: #d9b3ff;
+}
+.side-nav-links { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.side-nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
+}
+.side-nav-links a:hover { background: white; color: black; }
+.side-nav-collapsed .side-nav-links { display: none; }
+
+/* ===== SECTION CARDS ===== */
+.section {
+  padding: 60px 10%;
+  margin-left: 190px; /* space for sidebar */
+  background: #0b1a3d;
+}
+.card {
+  background: rgba(0, 204, 255, 0.1);
+  border: 1px solid #00cfff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.card h2 { color: #00cfff; }
+.card p { line-height: 1.6; }
+
+/* COLUMNS */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.column {
+  flex: 1 1 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+.column img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ORDERED LIST */
+.factors ol { padding-left: 20px; }
+.factors li { margin-bottom: 15px; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .columns { flex-direction: column; align-items: center; }
+  .section { margin-left: 0; padding: 40px 5%; }
+  .video-bg h1 { font-size: 3em; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><img src="logo.png" alt="SciWorld Logo" class="logo-img"></div>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html" title="Microorganisms">Chapter 1</a>
+      <a href="chapter2.html" title="Nutrition & Food Technology">Chapter 2</a>
+      <a href="chapter3.html" title="Environmental Sustainability">Chapter 3</a>
+      <a href="chapter4.html" title="Rate of Reaction">Chapter 4</a>
+      <a href="chapter5.html" title="Carbon Compounds">Chapter 5</a>
+      <a href="chapter6.html" title="Electrochemistry">Chapter 6</a>
+      <a href="chapter7.html" title="Light and Optic">Chapter 7</a>
+      <a href="chapter8.html" title="Space Technology">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+
+<!-- DATE & TIME FIXED -->
+<div class="date-time-box" id="dateTime"></div>
+
+
+  <!-- SEARCH BOX -->
+  <div class="nav-search">
+    <input type="text" id="searchInput" placeholder="Search content..." onkeyup="handleSearch()">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">Subtopics ▸</div>
+  <div class="side-nav-links">
+    <a href="#electrolytic-cell">Electrolytic Cell</a>
+    <a href="#chemical-cell">Chemical Cell</a>
+    <a href="#electrolysis">Electrolysis</a>
+    <a href="#factors">Factors Affecting Electrolysis</a>
+    <a href="#video-tutorial">Video Tutorial</a>
+
+  </div>
+</div>
+
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video autoplay muted loop>
+    <source src="electrochemistry-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <h1>CHAPTER 6: ELECTROCHEMICAL</h1>
+</div>
+
+<!-- 6.1 Electrochemical Cells -->
+<section class="section card" id="electrochemical-cells">
+  <h2>6.1 Electrochemical Cells</h2>
+  <p>Electrochemistry studies the relationship between electrical energy and chemical reactions. It explains how chemical energy can be converted into electrical energy and vice versa.</p>
+
+  <div class="columns">
+    <div class="column" id="electrolytic-cell">
+      <img src="electrolytic-cell.jpeg" alt="Electrolytic Cell">
+      <h3>Electrolytic Cell</h3>
+      <p>Uses electrical energy to drive non-spontaneous chemical reactions. Commonly used in electroplating and metal extraction.</p>
+    </div>
+    <div class="column" id="chemical-cell">
+      <img src="chemical-cell.jpeg" alt="Chemical Cell">
+      <h3>Chemical Cell</h3>
+      <p>Converts chemical energy into electrical energy via spontaneous reactions. Examples include dry cells and batteries.</p>
+    </div>
+    <div class="column" id="electrolysis">
+      <img src="electrolysis.jpeg" alt="Electrolysis">
+      <h3>Electrolysis</h3>
+      <p>Decomposition of electrolytes using electrical energy. Ions move to electrodes and react chemically.</p>
+    </div>
+  </div>
+
+  <!-- Factors Affecting Electrolysis -->
+  <div class="factors" id="factors">
+    <h3>Factors Affecting Electrolysis</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="ions-position.jpeg" alt="Position of Ions">
+        <ol>
+          <li><strong>Position of Ions:</strong> Ions lower in the electrochemical series are more easily discharged.</li>
+        </ol>
+      </div>
+      <div class="column">
+        <img src="concentration.jpeg" alt="Concentration of Electrolyte">
+        <ol start="2">
+          <li><strong>Concentration of Electrolyte:</strong> Higher concentration ions are more likely to be discharged.</li>
+        </ol>
+      </div>
+      <div class="column">
+        <img src="electrode-type.jpeg" alt="Type of Electrode">
+        <ol start="3">
+          <li><strong>Type of Electrode:</strong> Inert electrodes do not react, active electrodes may participate in reaction.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6.2 Chemical Cells -->
+<section class="section card" id="chemical-cells">
+  <h2>6.2 Chemical Cells</h2>
+  <div class="columns">
+    <div class="column">
+      <img src="simple-chemical-cell.jpeg" alt="Simple Chemical Cell">
+      <h3>Simple Chemical Cell</h3>
+      <p>Two metals like zinc and copper in an electrolyte. The more reactive metal is the anode (oxidation), the less reactive is the cathode. Electrons flow through an external circuit to produce electrical energy.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section card" id="video-tutorial">
+  <h2>6.3 Video Tutorial: Electrochemistry</h2>
+  <p>This video explains electrochemical cells and electrolysis step by step.</p>
+
+  <video controls class="tutorial-video">
+    <source src="electrochemistry-tutorial.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+
+<script>
+/* Sidebar collapse */
+function toggleSideNav() {
+  const sideNav = document.getElementById('sideNav');
+  sideNav.classList.toggle('side-nav-collapsed');
+}
+
+/* Simple Search Simulation */
+function handleSearch() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('searchResults');
+  const items = [
+    {name: 'Electrolytic Cell', link:'#electrolytic-cell'},
+    {name: 'Chemical Cell', link:'#chemical-cell'},
+    {name: 'Electrolysis', link:'#electrolysis'},
+    {name: 'Factors Affecting Electrolysis', link:'#factors'}
+  ];
+  resultsDiv.innerHTML = '';
+  if(input){
+    items.filter(i=>i.name.toLowerCase().includes(input))
+         .forEach(i=>{
+           const a = document.createElement('a');
+           a.href = i.link;
+           a.textContent = i.name;
+           resultsDiv.appendChild(a);
+         });
+    resultsDiv.style.display='block';
+  } else { resultsDiv.style.display='none'; }
+}
+
+function updateDateTime() {
+  const now = new Date();
+
+  const date = now.toLocaleDateString('en-MY', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const time = now.toLocaleTimeString('en-MY', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+
+  document.getElementById('dateTime').innerHTML = date + "<br>" + time;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+
+</script>
+
+</body>
+</html>
+
+

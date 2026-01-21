@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | SciWorld</title>
+
+<style>
+/* ===== GENERAL ===== */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1a3d;
+  color: #ffffff;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 12px 0;
+  z-index: 9999;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+nav a:hover { background: #fff; color: #000; }
+.logo { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+.logo-img { width: 50px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* DROPDOWN */
+.dropdown { display: inline-block; position: relative; }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(0,0,0,0.9);
+  min-width: 150px;
+  border-radius: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dropdown-content a { display: block; padding: 10px; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* SEARCH BOX */
+.nav-search { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+.nav-search input { padding: 6px 10px; border-radius: 6px; border: none; width: 160px; }
+.search-results { position: absolute; top: 38px; right: 0; background: rgba(0,0,0,0.95); border-radius: 6px; width: 220px; display: none; }
+.search-results a { display: block; padding: 8px 10px; color: white; text-decoration: none; }
+.search-results a:hover { background: white; color: black; }
+
+/* ===== VIDEO BACKGROUND ===== */
+.video-bg {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.video-bg h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: #00cfff;
+  text-align: center;
+}
+
+/* ===== CONTENT ===== */
+.section {
+  padding: 60px 10% 40px 10%;
+}
+.card {
+  background: rgba(0, 204, 255, 0.1);
+  border: 1px solid #00cfff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.card h2 { color: #00cfff; margin-bottom: 20px; }
+
+/* TEAM CARDS */
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.team-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00cfff;
+}
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  object-fit: cover;
+  border: 2px solid #00cfff;
+}
+
+/* CONTACT US & SOCIAL MEDIA */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  filter: invert(72%) sepia(73%) saturate(3514%) hue-rotate(180deg) brightness(100%) contrast(97%);
+  transition: transform 0.3s, filter 0.3s;
+}
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #00cfff);
+}
+
+/* DATE & TIME FIXED */
+.date-time-box {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  background: rgba(0,0,0,0.75);
+  color: #00cfff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0,204,255,0.4);
+  z-index: 10000;
+  text-align: right;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .team-cards { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><img src="logo.png" class="logo-img" alt="SciWorld Logo"></div>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html">Chapter 1</a>
+      <a href="chapter2.html">Chapter 2</a>
+      <a href="chapter3.html">Chapter 3</a>
+      <a href="chapter4.html">Chapter 4</a>
+      <a href="chapter5.html">Chapter 5</a>
+      <a href="chapter6.html">Chapter 6</a>
+      <a href="chapter7.html">Chapter 7</a>
+      <a href="chapter8.html">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+
+  <div class="nav-search">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="handleSearch()">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</nav>
+
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video autoplay muted loop>
+    <source src="about-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <h1>About Us</h1>
+</div>
+
+<!-- TEAM SECTION -->
+<section class="section card">
+  <h2>Meet Our Team</h2>
+  <div class="team-cards">
+    <div class="team-card">
+      <img src="aiman.jpeg" alt="Aiman Nawfal">
+      <h3>Aiman Nawfal</h3>
+      <p>Manager</p>
+    </div>
+    <div class="team-card">
+      <img src="shah.jpeg" alt="Shahidul Iman">
+      <h3>Shahidul Iman</h3>
+      <p>UI/UX Designer</p>
+    </div>
+    <div class="team-card">
+      <img src="fareez.jpeg" alt="Fareez Alliyan">
+      <h3>Fareez Alliyan</h3>
+      <p>Content Developer</p>
+    </div>
+    <div class="team-card">
+      <img src="Capik.jpeg" alt="Nur Shaffiq">
+      <h3>Nur Shaffiq</h3>
+      <p>Web Developer</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT US & SOCIAL MEDIA CARD -->
+<section class="section card" id="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm" style="max-width: 600px; margin: 0 auto; text-align: left;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required
+           style="width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #00cfff; background: rgba(0,0,0,0.2); color:white;">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required
+           style="width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #00cfff; background: rgba(0,0,0,0.2); color:white;">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required
+              style="width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #00cfff; background: rgba(0,0,0,0.2); color:white;"></textarea>
+
+    <button type="submit"
+            style="background:#00cfff; color:#000; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.3s;">
+      Send Message
+    </button>
+    <p id="formMessage" style="margin-top:10px; color:#00cfff;"></p>
+  </form>
+
+  <!-- SOCIAL MEDIA LINKS -->
+  <div style="text-align:center; margin-top:30px;">
+    <h3>Follow Us</h3>
+    <div style="display:flex; justify-content:center; gap:20px; margin-top:10px;">
+      <a href="https://www.facebook.com/share/17jDysUfES/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+        <img src="facebook.jpeg" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/aim4n._05?igsh=MnR5eWN4N2Q5N3Vi&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer">
+        <img src="insta.jpeg" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://www.tiktok.com/@alittleguy123?_r=1&_t=ZS-939RXClRmGO" target="_blank" rel="noopener noreferrer">
+        <img src="tiktok.jpeg" alt="TikTok" class="social-icon">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DATE & TIME -->
+<div class="date-time-box" id="dateTime"></div>
+
+<script>
+/* SEARCH */
+function handleSearch() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const results = document.getElementById('searchResults');
+  const items = [
+    {name:'Home', link:'index.html'},
+    {name:'Chapter 1', link:'chapter1.html'},
+    {name:'Chapter 6', link:'chapter6.html'},
+    {name:'Quiz', link:'quiz.html'}
+  ];
+  results.innerHTML = '';
+  if(input){
+    items.filter(i=>i.name.toLowerCase().includes(input)).forEach(i=>{
+      const a = document.createElement('a');
+      a.href = i.link;
+      a.textContent = i.name;
+      results.appendChild(a);
+    });
+    results.style.display='block';
+  } else results.style.display='none';
+}
+
+/* DATE & TIME */
+function updateDateTime(){
+  const now = new Date();
+  document.getElementById('dateTime').innerHTML =
+    now.toLocaleDateString('en-MY',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) +
+    "<br>" +
+    now.toLocaleTimeString('en-MY');
+}
+setInterval(updateDateTime,1000);
+updateDateTime();
+
+/* CONTACT FORM */
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); 
+  formMessage.textContent = "Thank you! Your message has been sent.";
+  form.reset();
+});
+</script>
+
+</body>
+</html>
+
+
