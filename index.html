@@ -1,0 +1,100 @@
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SciWorld - SPM Form 5 Science</title>
+  <link rel="stylesheet" href="homestyles.css" />
+</head>
+<body>
+<audio id="homebgMusic" loop>
+  <source src="homebgMusic.mp3" type="audio/mp3">
+  Your browser does not support audio.
+</audio>
+
+<nav>
+ <a href="javascript:void(0)" class="logo" onclick="toggleMusic()">
+  <img src="sciworld-logo.png" alt="SciWorld Logo" style="cursor:pointer;">
+</a>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html">Chapter 1</a>
+      <a href="chapter2.html">Chapter 2</a>
+      <a href="chapter3.html">Chapter 3</a>
+      <a href="#">Chapter 4</a>
+      <a href="#">Chapter 5</a>
+      <a href="chapter6.html">Chapter 6</a>
+      <a href="chapter7.html">Chapter 7</a>
+      <a href="chapter8.html">Chapter 8</a>
+    </div>
+  </div>
+  <a href="#">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+</nav>
+
+<div class="subtopic-title" style="background-image:url('homebg.jpg'); background-size:110%; background-position:center; background-repeat: no-repeat;">
+  <marquee><h1>Welcome to SciWorld</h1></marquee>
+</div>
+
+<section>
+  <div class="container">
+  <h2>Introduction</h2>
+  <p>Welcome to <strong>SciWorld</strong>, a free online resource for SPM Form 5 Science (Sains) students. Our site provides concise revision notes, interactive quizzes, and illustrative diagrams aligned with the Malaysian KSSM syllabus. The SPM (Sijil Pelajaran Malaysia) is the national examination for Form 5 students:contentReference[oaicite:6]{index=6}, and the science curriculum covers topics like microorganisms, nutrition, environmental conservation, and carbon compounds:contentReference[oaicite:7]{index=7}. Use the navigation menu to explore chapters, quizzes, and other resources.</p>
+</section>
+
+<div class="classification-title" style="color: #000000">Chapters Overview</div>
+<div class="horizontal-scroll">
+  <div class="scroll-item">
+    <img src="bacteria.jpg" alt="Bacteria">
+    <div class="scroll-item-label">Chapter 1: Microorganisms</div>
+  </div>
+  <div class="scroll-item">
+    <img src="boiling.jpg" alt="Food Processing">
+    <div class="scroll-item-label">Chapter 2: Nutrition & Food</div>
+  </div>
+  <div class="scroll-item">
+    <img src="em.jpeg" alt="Conducive Environment">
+    <div class="scroll-item-label">Chapter 3: Environment Sustainability</div>
+  </div>
+  <div class="scroll-item">
+    <img src="boiling.jpg" alt="Food Processing">
+    <div class="scroll-item-label">Chapter 4: Nutrition & Food</div>
+  </div>
+  <div class="scroll-item">
+    <img src="boiling.jpg" alt="Food Processing">
+    <div class="scroll-item-label">Chapter 5: Nutrition & Food</div>
+  </div>
+<div class="scroll-item">
+    <img src="concentration.jpeg" alt="Electron Concentration in Liquid">
+    <div class="scroll-item-label">Chapter 6: Electrochemical</div>
+  </div>
+  <div class="scroll-item">
+    <img src="boiling.jpg" alt="Food Processing">
+    <div class="scroll-item-label">Chapter 7: Light and Optics</div>
+  </div>
+  <div class="scroll-item">
+    <img src="intro8-bg.jpg" alt="Earth and Satellite">
+    <div class="scroll-item-label">Chapter 8: Space Technology</div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+  <h2>Key Features</h2>
+  <ul class="centered-list">
+    <li>Comprehensive revision notes for all Form 5 Science topics</li>
+    <li>Interactive quizzes for self-testing and exam practice</li>
+    <li>Visual diagrams and images to illustrate complex concepts</li>
+    <li>Content updated to match the latest SPM curriculum</li>
+  </ul>
+</section>
+<!-- DATE & TIME -->
+<div class="date-time-box" id="dateTime"></div>
+
+<script src="datetime.js"></script>
+<script src="home-bg-music.js"></script>
+<footer>© SciWorld 2026</footer>
+
+</body>
+</html>
