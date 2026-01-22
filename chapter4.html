@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="fareez.css" />
+<title>Chapter 4: Rate of Reaction</title>
+
+<style>
+/* ================= ORIGINAL CSS (KEKAL) ================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: transparent;
+  position: relative; /* added for moving-bg positioning */
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 1em;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 12px 0;
+  z-index: 9999;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+nav .logo {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav .logo img {
+  height: 35px;
+}
+
+nav .dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.9);
+  min-width: 140px;
+  z-index: 9999;
+  border-radius: 6px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav .dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.side-nav-box {
+  position: fixed;
+  top: 43.6px;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  z-index: 999;
+}
+
+.side-nav-header {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.side-nav-title {
+  font-weight: bold;
+  color: #36fff2e6;
+}
+
+.side-nav-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.side-nav-collapsed .side-nav-links {
+  display: none;
+}
+
+.parallax-video {
+  position: relative;
+  height: 565px;
+  overflow: hidden;
+}
+
+.parallax-video video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.parallax-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.parallax-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+section {
+  padding: 50px;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  border: 1px solid #fff;
+  padding: 12px;
+}
+
+/* ================= MOVING BACKGROUND ================= */
+.moving-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 565px; /* only top section */
+  background: url('science.gif') repeat;
+  background-size: cover;
+  z-index: -2;
+  animation: bgMove 40s linear infinite;
+}
+
+@keyframes bgMove {
+  from { background-position: 0 0; }
+  to { background-position: 1200px 0; }
+}
+
+/* ================= SUBTOPIC TITLES ================= */
+.subtopic-title {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(180,0,0,0.6), rgba(0,40,120,0.6));
+}
+
+.subtopic-title h1 {
+  text-align: center;
+  text-shadow: 2px 2px 10px #000;
+}
+
+/* ================= GRAPH ================= */
+.graph-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+canvas {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="moving-bg"></div>
+
+<nav>
+  <a href="index.html" class="logo"><img src="sciworld-logo.png"></a>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a>CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html">Chapter 1</a>
+      <a href="chapter2.html">Chapter 2</a>
+      <a href="chapter3.html">Chapter 3</a>
+      <a href="chapter4.html"><b>Chapter 4 </b></a>
+      <a href="chapter5.html">Chapter 5</a>
+      <a href="chapter6.html">Chapter 6</a>
+      <a href="chapter7.html">Chapter 7</a>
+      <a href="chapter8.html">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+  <!-- LIVE DATE/TIME -->
+  <span id="datetime" style="
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:0.9em;
+    color:#36fff2e6;
+  "></span>
+</nav>
+
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">
+    <span class="side-nav-title">Subtopics</span>
+  </div>
+  <div class="side-nav-links">
+    <a href="#r4-1">4.1 Introduction ⚗️</a>
+    <a href="#r4-2">4.2 Factors ⚙️</a>
+    <a href="#r4-3">4.3 Applications 🔬</a>
+  </div>
+</div>
+
+<div class="parallax-video">
+  <video autoplay muted loop>
+    <source src="chapter4-bg.mp4" type="video/mp4">
+  </video>
+  <h1 class="parallax-text">CHAPTER 4 🕷️<br>RATE OF REACTION</h1>
+</div>
+
+<div id="r4-1" class="subtopic-title">
+  <h1>4.1 Introduction to Rate of Reaction ⚗️</h1>
+</div>
+
+<section>
+<p><b>Rate of reaction</b> is the change in the quantity of reactant or product per unit time.</p>
+
+<h3>Fast vs Slow Reaction</h3>
+
+<table>
+<tr><th>Reaction</th><th>Fast</th><th>Slow</th></tr>
+<tr><td>Rate</td><td>High</td><td>Low</td></tr>
+<tr><td>Time</td><td>Short</td><td>Long</td></tr>
+</table>
+
+<div class="graph-container">
+  <canvas id="reactionGraph" width="700" height="400"></canvas>
+  <p><b>X-axis:</b> Time ⏱️</p>
+<p><b>Y-axis:</b> Quantity of product formed 🧪</p>
+
+<ul style="list-style-type: none; padding: 0;">
+  <li>📈 <b>Steep curve</b> → Fast reaction</li>
+  <li>📉 <b>Gentle curve</b> → Slow reaction</li>
+</ul>
+</div>
+</section>
+
+<div id="r4-2" class="subtopic-title">
+  <h1>4.2 Factors Affecting the Rate of Reaction ⚙️</h1>
+</div>
+
+<section>
+<table>
+<tr><th>Factor</th><th>Explanation</th></tr>
+<tr><td>Temperature</td><td>Higher temperature increases rate</td></tr>
+<tr><td>Concentration</td><td>Higher concentration increases rate</td></tr>
+<tr><td>Surface Area</td><td>Smaller size increases rate</td></tr>
+<tr><td>Catalyst</td><td>Catalyst speeds up reaction</td></tr>
+<tr><td>Pressure</td><td>Higher pressure increases rate</td></tr>
+</table>
+</section>
+
+<div id="r4-3" class="subtopic-title" style="background-image:url('application-bg.jpg')">
+  <h1>4.3 Application of Rate of Reaction ⚗️🔥</h1>
+</div>
+
+<section>
+<h3>🏭 Industrial Applications</h3>
+<p>
+The concept of <b>rate of reaction</b> is very important in industries.
+By controlling factors such as temperature, pressure and catalyst,
+industries can produce chemicals faster, cheaper and safer.
+</p>
+
+<br>
+
+<h3>🧪 Haber Process (Production of Ammonia)</h3>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Purpose</td>
+<td>To produce ammonia (NH₃) for fertilisers 🌱</td>
+</tr>
+
+<tr>
+<td>Conditions Used</td>
+<td>
+• High pressure<br>
+• High temperature<br>
+• Iron catalyst
+</td>
+</tr>
+
+<tr>
+<td>Relation to Rate of Reaction</td>
+<td>
+• High pressure increases collision frequency<br>
+• High temperature increases kinetic energy<br>
+• Catalyst speeds up reaction
+</td>
+</tr>
+
+<tr>
+<td>Importance</td>
+<td>
+Increases production rate and reduces manufacturing cost
+</td>
+</tr>
+</table>
+
+<br>
+
+<h3>🧪 Contact Process (Production of Sulphuric Acid)</h3>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Purpose</td>
+<td>To manufacture sulphuric acid (H₂SO₄) for detergents and fertilisers 🧼</td>
+</tr>
+
+<tr>
+<td>Conditions Used</td>
+<td>
+• Moderate temperature<br>
+• Vanadium(V) oxide catalyst
+</td>
+</tr>
+
+<tr>
+<td>Relation to Rate of Reaction</td>
+<td>
+• Catalyst increases rate without being used up<br>
+• Suitable temperature prevents energy wastage
+</td>
+</tr>
+
+<tr>
+<td>Importance</td>
+<td>
+Allows continuous and efficient industrial production
+</td>
+</tr>
+</table>
+
+<br>
+
+<h3>💡 Why Rate of Reaction Matters</h3>
+
+<table>
+<tr>
+<th>Benefit</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Efficiency</td>
+<td>Faster production in a shorter time ⏱️</td>
+</tr>
+
+<tr>
+<td>Cost Saving</td>
+<td>Less energy and raw materials needed 💰</td>
+</tr>
+
+<tr>
+<td>Safety</td>
+<td>Controlled reactions reduce industrial accidents ⚠️</td>
+</tr>
+</table>
+
+<!-- Bottom Video -->
+<section style="text-align:center; padding:50px 0; background-color: rgba(0,0,0,0.6);">
+  <h2>🎥 Demonstration Video</h2>
+  <video width="80%" controls autoplay muted loop style="border: 2px solid #fff; border-radius: 10px;">
+    <source src="rateofreaction.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-top:10px; color:#fff;">Watch the reaction in action!</p>
+</section>
+</section>
+<footer>Copyright © SciWorld 2026</footer>
+
+<script>
+function toggleSideNav() {
+  document.getElementById("sideNav").classList.toggle("side-nav-collapsed");
+}
+
+const c = document.getElementById("reactionGraph");
+const ctx = c.getContext("2d");
+
+const fast = [0,40,70,90,100];
+const slow = [0,15,30,45,60];
+
+ctx.strokeStyle="#fff";
+ctx.beginPath();
+ctx.moveTo(50,350); ctx.lineTo(650,350); ctx.lineTo(650,50);
+ctx.stroke();
+
+ctx.strokeStyle="red";
+ctx.beginPath();
+fast.forEach((v,i)=>{
+  let x=50+i*150, y=350-v*3;
+  i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+});
+ctx.stroke();
+
+ctx.strokeStyle="blue";
+ctx.beginPath();
+slow.forEach((v,i)=>{
+  let x=50+i*150, y=350-v*3;
+  i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+});
+ctx.stroke();
+
+// ===== LIVE DATE/TIME =====
+function updateDateTime() {
+  const now = new Date();
+  document.getElementById("datetime").innerText =
+    now.toLocaleDateString() + " | " + now.toLocaleTimeString();
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+</body>
+</html>
+
+
+

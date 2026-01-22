@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+  <link rel="stylesheet" href="fareez.css" />
+</head>
+
+<body>
+<nav>
+  <div class="logo"><img src="logo.png" class="logo-img" alt="SciWorld Logo"></div>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a href="#">CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html">Chapter 1</a>
+      <a href="chapter2.html">Chapter 2</a>
+      <a href="chapter3.html">Chapter 3</a>
+      <a href="chapter4.html">Chapter 4</a>
+      <a href="chapter5.html">Chapter 5</a>
+      <a href="chapter6.html">Chapter 6</a>
+      <a href="chapter7.html">Chapter 7</a>
+      <a href="chapter8.html">Chapter 8</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+
+<!-- DATE & TIME -->
+<div id="datetime"></div>
+
+<section>
+<h1>Quiz 🧪</h1>
+<h3>Answer ALL questions</h3>
+
+<div id="quiz"></div>
+
+<hr>
+
+<div style="text-align:center;">
+  <button onclick="showAllAnswers()">SHOW ALL ANSWERS</button>
+</div>
+
+</section>
+
+<script>
+const questions = [
+  {
+    q: "Which type of lens is known as a converging lens?",
+    options: ["Concave lens", "Convex lens", "Cylindrical lens", "Light tube"],
+    answer: 1
+  },
+  {
+    q: "Carbon handprint refers to",
+    options: [
+      "Amount of carbon produced by industries",
+      "Negative environmental impacts",
+      "Actions taken to reduce carbon footprint",
+      "Measurement of air pollution"
+    ],
+    answer: 2
+  },
+  {
+    q: "What does BOD measure?",
+    options: [
+      "Carbon dioxide in air",
+      "Oxygen needed to decompose organic matter",
+      "Heavy metals in water",
+      "Water temperature"
+    ],
+    answer: 1
+  },
+  {
+    q: "Electrochemistry is the study of",
+    options: [
+      "Heat energy and matter",
+      "Electrical energy and motion",
+      "Relationship between chemical and electrical energy",
+      "Light energy and atoms"
+    ],
+    answer: 2
+  },
+  {
+    q: "Which of the following is NOT a microorganism?",
+    options: ["Bacteria", "Virus", "Fungi", "Insect"],
+    answer: 3
+  },
+  {
+    q: "Which is an example of negative emission technology?",
+    options: [
+      "Burning fossil fuels",
+      "Open dumping",
+      "Carbon capture and storage",
+      "Acid rain"
+    ],
+    answer: 2
+  },
+  {
+    q: "Why are microplastics dangerous in the food chain?",
+    options: [
+      "They dissolve easily in water",
+      "They reduce oxygen levels",
+      "They accumulate toxic substances",
+      "They increase soil fertility"
+    ],
+    answer: 2
+  },
+  {
+    q: "An electrolytic cell converts",
+    options: [
+      "Chemical to electrical energy",
+      "Electrical to chemical energy",
+      "Heat to electrical energy",
+      "Light to chemical energy"
+    ],
+    answer: 1
+  },
+  {
+    q: "What is meant by the product life cycle?",
+    options: [
+      "Time taken to manufacture",
+      "Stages from raw material to disposal",
+      "Durability of product",
+      "Cost of production"
+    ],
+    answer: 1
+  },
+  {
+    q: "What does a high Water Pollution Index indicate?",
+    options: [
+      "Clean water",
+      "Safe drinking water",
+      "Polluted water",
+      "High oxygen content"
+    ],
+    answer: 2
+  }
+];
+
+questions.sort(() => Math.random() - 0.5);
+
+const quizDiv = document.getElementById("quiz");
+
+questions.forEach((item, index) => {
+  const qDiv = document.createElement("div");
+  qDiv.className = "question";
+
+  qDiv.innerHTML = `
+    <p><b>${index + 1}. ${item.q}</b></p>
+    <div class="options">
+      ${item.options.map((opt, i) => `
+        <label>
+          <input type="radio" name="q${index}">
+          ${String.fromCharCode(65+i)}. ${opt}
+        </label>
+      `).join("")}
+    </div>
+    <button onclick="this.nextElementSibling.classList.toggle('show')">
+      Check Answer
+    </button>
+    <div class="answer">✔ Answer: ${String.fromCharCode(65 + item.answer)}</div>
+  `;
+
+  quizDiv.appendChild(qDiv);
+});
+
+function showAllAnswers() {
+  document.querySelectorAll('.answer').forEach(a => a.classList.add('show'));
+}
+</script>
+
+<!-- DATE & TIME SCRIPT -->
+<script>
+function updateDateTime() {
+  const dt = new Date();
+  const formatted = dt.toLocaleString('en-GB', { hour12: false });
+  document.getElementById('datetime').textContent = "Current Date & Time: " + formatted;
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+</body>
+</html>
+
+

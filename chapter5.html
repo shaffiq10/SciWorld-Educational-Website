@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 5: Carbon Compounds</title>
+
+<style>
+/* ================= GENERAL ================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* ================= MOVING BACKGROUND ================= */
+.moving-bg {
+  position: fixed;
+  inset: 0;
+  background: url('bee.gif') repeat;
+  background-size: cover;
+  z-index: -999;
+  pointer-events: none;
+  animation: bgMove 40s linear infinite;
+}
+
+@keyframes bgMove {
+  from { background-position: 0 0; }
+  to { background-position: 1200px 0; }
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.85);
+  text-align: center;
+  padding: 12px 0;
+  z-index: 9999;
+}
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+nav a:hover {
+  background-color: #ffd700;
+  color: #000;
+  transform: scale(1.1);
+}
+nav .logo {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav .logo img {
+  height: 35px;
+}
+nav .dropdown {
+  display: inline-block;
+  position: relative;
+}
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.9);
+  min-width: 140px;
+  z-index: 9999;
+  border-radius: 6px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav .dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: normal;
+}
+nav .dropdown-content a:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+nav .dropdown:hover .dropdown-content { display: block; }
+nav .dropdown > a { cursor: pointer; }
+
+/* ================= SIDE NAV ================= */
+.side-nav-box {
+  position: fixed;
+  top: 43.6px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.85);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  z-index: 999;
+}
+.side-nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.side-nav-title {
+  font-weight: bold;
+  font-size: 1em;
+  color: #ffd700;
+}
+.side-nav-toggle {
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: transform 0.3s;
+}
+.side-nav-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.side-nav-links a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.80em;
+}
+.side-nav-links a:hover {
+  background-color: #ffd700;
+  color: #000;
+  transform: scale(1.05);
+}
+.side-nav-collapsed .side-nav-links {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.side-nav-collapsed .side-nav-toggle {
+  transform: rotate(90deg);
+}
+
+/* ================= PARALLAX HEADER ================= */
+.parallax-video {
+  position: relative;
+  height: 565px;
+  overflow: hidden;
+  width: 100%;
+  background: rgba(0,0,0,0.2); /* lighter overlay to see GIF */
+  z-index: 0;
+}
+.parallax-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.1); /* lighter so GIF shows */
+  z-index: 1;
+}
+.parallax-video .parallax-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #ffd700;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px #000;
+  white-space: nowrap;
+}
+
+/* ================= SUBTOPIC TITLES ================= */
+.subtopic-title {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.subtopic-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.1); /* lighter overlay */
+  z-index: 1;
+}
+.subtopic-title h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px #000;
+  color: #ffd700;
+}
+
+/* ================= CONTENT SECTIONS ================= */
+section {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  box-sizing: border-box;
+  line-height: 1.6;
+  background-color: rgba(0,0,0,0.05); /* almost fully transparent */
+  position: relative;
+  z-index: 1;
+}
+ul.centered-list {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 900px;
+  list-style-position: inside;
+  line-height: 1.6;
+}
+ul.centered-list li {
+  margin-bottom: 12px;
+}
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 90%;
+  background-color: rgba(255,255,0,0.1);
+}
+th, td {
+  border: 1px solid #ffd700;
+  padding: 12px;
+  text-align: left;
+}
+th { background-color: rgba(255,215,0,0.3); }
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(0,0,0,0.5);
+  color: #ffd700;
+  font-size: 1em;
+  position: relative;
+  z-index: 1;
+}
+.mindmap-fat {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin: 30px 0;
+}
+
+.center-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffd966;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.branch {
+  position: absolute;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.branch.top {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.branch.left {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.branch.right {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.mindmap-fat {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin: 30px 0;
+}
+
+.center-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffd700; /* bright yellow */
+  color: #000; /* black text so it shows */
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.branch {
+  position: absolute;
+  background: #ffec80; /* light yellow so text shows */
+  color: #000; /* black text */
+  padding: 10px 14px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9;
+}
+
+.branch.top {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.branch.left {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.branch.right {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.process-box{
+  border:2px solid #ffd700;
+  padding:10px 16px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.2);
+  text-align:center;
+  min-width:200px;
+}
+.mindmap-container{
+  position: relative;
+  width: 320px;
+  height: 220px;
+  margin: 30px auto;
+}
+
+.mindmap-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2e7d32;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.mindmap-branch{
+  position: absolute;
+  background: #c8e6c9;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mindmap-branch.left{ left: 0; top: 50%; transform: translateY(-50%); }
+.mindmap-branch.right{ right: 0; top: 50%; transform: translateY(-50%); }
+.mindmap-branch.top{ top: 0; left: 50%; transform: translateX(-50%); }
+.mindmap-branch.bottom{ bottom: 0; left: 50%; transform: translateX(-50%); }
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- MOVING BACKGROUND -->
+<div class="moving-bg"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo"><img src="sciworld-logo.png" alt="SciWorld Logo"></a>
+  <a href="index.html">HOME</a>
+  <div class="dropdown">
+    <a>CHAPTERS ▾</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html">Chapter 1</a>
+      <a href="chapter2.html">Chapter 2</a>
+      <a href="chapter3.html">Chapter 3</a>
+      <a href="chapter4.html">Chapter 4</a>
+      <a href="chapter5.html"><b>Chapter 5</b></a>
+      <a href="chapter6.html">Chapter 6</a>
+      <a href="chapter7.html">Chapter 7</a>
+      <a href="chapter8.html">Chapter 8</a>
+       <a href="quiz.html">Quiz</a>
+    </div>
+  </div>
+  <a href="quiz.html">QUIZ</a>
+  <a href="about.html">ABOUT US</a>
+</nav>
+
+<!-- SIDE NAV -->
+<div class="side-nav-box" id="sideNav">
+  <div class="side-nav-header" onclick="toggleSideNav()">
+    <span class="side-nav-title">Subtopics</span>
+    <span class="side-nav-toggle" id="sideNavToggle">▸</span>
+  </div>
+  <div class="side-nav-links">
+    <a href="#r5-1">5.1 Introduction</a>
+    <a href="#r5-2">5.2 Hydrocarbons</a>
+    <a href="#r5-3">5.3 Alcohol</a>
+    <a href="#r5-4">5.4 Fats</a>
+    <a href="#r5-5">5.5 Palm Oil</a>
+  </div>
+</div>
+
+<!-- PARALLAX HEADER -->
+<div class="parallax-video">
+  <h1 class="parallax-text">CHAPTER 5:<br>CARBON COMPOUNDS 🐝</h1>
+</div>
+
+<!-- 5.1 SUBTOPIC -->
+<div id="r5-1" class="subtopic-title" style="background-image: url('carbon-bg.jpg');">
+  <h1>5.1 Introduction to Carbon Compounds 🧪</h1>
+</div>
+
+<section>
+  <h3>📌 Definition of Carbon Compounds</h3>
+  <p>Carbon compounds are chemical compounds containing carbon atoms. They form the basis of organic chemistry and life on Earth.</p>
+
+  <h3>🌟 Types of Carbon Compounds</h3>
+  <ul class="centered-list">
+    <li><b>Organic:</b> Contain carbon and hydrogen (carbohydrates, proteins, fats, alcohols).</li>
+    <li><b>Inorganic:</b> Carbon compounds not from living organisms (CO₂, carbonates).</li>
+  </ul>
+
+  <h3>♻️ Carbon Cycle</h3>
+  <p>Carbon constantly moves through the atmosphere, living organisms, oceans, and soil. Key processes include photosynthesis, respiration, decomposition, and combustion.</p>
+
+  <div style="text-align:center; margin:30px 0;">
+    <img src="carboncycle.jpg" alt="Carbon Cycle Diagram" style="width:50%; max-width:500px; min-width:300px; border:3px solid #ffd700; border-radius:12px;">
+    <p style="color:#ffd700; margin-top:8px;">Figure: Simplified Carbon Cycle 🌱</p>
+  </div>
+
+  <h3>💨 Carbon Dioxide (CO₂)</h3>
+  <table>
+    <tr><th>Released Through ⚡</th><th>Absorbed By 🌱</th></tr>
+    <tr>
+      <td>
+        <ul>
+          <li>Respiration of living organisms</li>
+          <li>Combustion of fossil fuels</li>
+          <li>Decomposition of dead organisms</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Green plants through photosynthesis</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <p style="margin-top:20px; color:#ffd700; font-weight:bold;">🔍 Fun Fact: One tree can absorb up to 48 pounds of CO₂ per year! 🌳</p>
+</section>
+<!-- 5.2 SUBTOPIC TITLE -->
+<div id="r5-2" class="subtopic-title" style="background-image: url('hydrocarbon-bg.jpg');">
+  <h1>5.2 Hydrocarbons 🔥</h1>
+</div>
+
+<section>
+  <h3>📌 Definition of Hydrocarbon Compounds</h3>
+  <p>
+    Hydrocarbon compounds are <b>organic carbon compounds made up of only carbon and hydrogen elements</b>.
+  </p>
+
+  
+
+  <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; gap:20px; margin:40px 0;">
+    
+    <div style="font-size:1.5em; font-weight:bold; color:#ffd700;">
+      Hydrocarbon Compound
+    </div>
+
+    <div style="display:flex; gap:60px; margin-top:20px;">
+      <div style="border:2px solid #ffd700; padding:15px 20px; border-radius:10px;">
+        Saturated Hydrocarbons
+      </div>
+
+      <div style="border:2px solid #ffd700; padding:15px 20px; border-radius:10px;">
+        Unsaturated Hydrocarbons
+      </div>
+    </div>
+  </div>
+
+  <ul class="centered-list">
+    <li><b>Saturated hydrocarbons</b> have <b>single covalent bonds</b> between carbon atoms.</li>
+    <li><b>Unsaturated hydrocarbons</b> have <b>at least one double or triple covalent bond</b> between carbon atoms.</li>
+  </ul>
+
+  <h3>📚 Homologous Series</h3>
+  <p>
+    A homologous series is a group of hydrocarbons with the same general formula and similar chemical properties.
+  </p>
+
+  <table>
+    <tr>
+      <th>Hydrocarbon</th>
+      <th>General Formula</th>
+      <th>Explanation</th>
+    </tr>
+    <tr>
+      <td>Alkane</td>
+      <td>C<sub>n</sub>H<sub>2n+2</sub></td>
+      <td>
+        Saturated hydrocarbon that contains only single covalent bonds between carbon atoms.
+      </td>
+    </tr>
+    <tr>
+      <td>Alkene</td>
+      <td>C<sub>n</sub>H<sub>2n</sub></td>
+      <td>
+        Unsaturated hydrocarbon that contains at least one double covalent bond between carbon atoms.
+      </td>
+    </tr>
+  </table>
+</section>
+<!-- 5.3 SUBTOPIC TITLE -->
+<div id="r5-3" class="subtopic-title" style="background-image: url('alcohol-bg.jpg');">
+  <h1>5.3 Alcohol 🍶</h1>
+</div>
+
+<section>
+  <h3>📌 Definition of Alcohol</h3>
+  <p>
+    Alcohol is an <b>organic carbon compound</b> which contains <b>carbon, hydrogen and oxygen elements</b>.
+    Alcohol is prepared through the <b>fermentation process</b>.
+  </p>
+
+  <h3>🧪 Fermentation Process</h3>
+
+  <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; gap:15px; margin:40px 0;">
+    
+    <div style="color:#ffd700; font-weight:bold;">
+      Zymase (Enzyme in Yeast)
+    </div>
+
+    <div style="border:2px solid #ffd700; padding:15px 25px; border-radius:10px;">
+      Glucose
+    </div>
+
+    <div style="font-size:2em;">⬇️</div>
+
+    <div style="border:2px solid #ffd700; padding:15px 25px; border-radius:10px;">
+      Ethanol + Carbon Dioxide
+    </div>
+  </div>
+
+<h3> Physical Properties of Alcohol</h3>
+
+<div style="display:flex; justify-content:center; margin:40px 0;">
+  <div style="position:relative; width:600px; height:400px;">
+
+    <!-- Center -->
+    <div style="
+      position:absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      background:#ffd700;
+      color:#000;
+      padding:15px 25px;
+      border-radius:20px;
+      font-weight:bold;
+      text-align:center;">
+      Physical Properties<br>of Alcohol
+    </div>
+
+    <!-- Property 1 -->
+    <div style="position:absolute; top:10%; left:50%; transform:translateX(-50%);
+      border:2px solid #ffd700; padding:10px; border-radius:12px;">
+      Colourless
+    </div>
+
+    <!-- Property 2 -->
+    <div style="position:absolute; left:5%; top:50%; transform:translateY(-50%);
+      border:2px solid #ffd700; padding:10px; border-radius:12px;">
+      Liquid at<br>room temperature
+    </div>
+
+    <!-- Property 3 -->
+    <div style="position:absolute; right:5%; top:50%; transform:translateY(-50%);
+      border:2px solid #ffd700; padding:10px; border-radius:12px;">
+      Distinctive<br>smell
+    </div>
+
+    <!-- Property 4 -->
+    <div style="position:absolute; bottom:10%; left:15%;
+      border:2px solid #ffd700; padding:10px; border-radius:12px;">
+      Boiling point increases<br>with more carbon atoms
+    </div>
+
+    <!-- Property 5 -->
+    <div style="position:absolute; bottom:10%; right:15%;
+      border:2px solid #ffd700; padding:10px; border-radius:12px;">
+      Solubility in water decreases<br>with more carbon atoms
+    </div>
+
+  </div>
+</div>
+
+
+  <h3>🏠 Uses of Alcohol in Daily Life</h3>
+
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Uses of Alcohol</th>
+    </tr>
+    <tr>
+      <td>Fuel</td>
+      <td>Used as biofuel such as ethanol to power vehicles</td>
+    </tr>
+    <tr>
+      <td>Medicine</td>
+      <td>Used as antiseptic and disinfectant to kill germs</td>
+    </tr>
+    <tr>
+      <td>Cosmetics</td>
+      <td>Used in perfumes, lotions and skincare products</td>
+    </tr>
+    <tr>
+      <td>Industry</td>
+      <td>Used as solvent in manufacturing paints, inks and chemicals</td>
+    </tr>
+  </table>
+
+  <h3>⚠️ Effects of Excessive Alcohol Consumption</h3>
+
+  <table>
+    <tr>
+      <th>Part of the Body</th>
+      <th>Adverse Effects of Excessive Alcohol Consumption</th>
+    </tr>
+    <tr>
+      <td>Brain</td>
+      <td>Impairs judgement, memory loss and addiction</td>
+    </tr>
+    <tr>
+      <td>Eyes</td>
+      <td>Blurred vision and slow eye coordination</td>
+    </tr>
+    <tr>
+      <td>Lungs</td>
+      <td>Slows breathing rate and reduces oxygen intake</td>
+    </tr>
+    <tr>
+      <td>Heart</td>
+      <td>Increases risk of heart disease and high blood pressure</td>
+    </tr>
+    <tr>
+      <td>Stomach</td>
+      <td>Causes irritation, ulcers and vomiting</td>
+    </tr>
+    <tr>
+      <td>Liver</td>
+      <td>Causes fatty liver, liver cirrhosis and liver failure</td>
+    </tr>
+    <tr>
+      <td>Kidney</td>
+      <td>Affects fluid balance and kidney function</td>
+    </tr>
+    <tr>
+      <td>Urinary Bladder</td>
+      <td>Increases urine production and dehydration</td>
+    </tr>
+  </table>
+</section>
+<div style="text-align:center; margin-top:25px;">
+  <img src="alcohol.jpg" 
+       alt="Effects of excessive alcohol consumption on the body"
+       style="
+         width:60%;
+         max-width:500px;
+         height:auto;
+         border-radius:10px;
+         box-shadow:0 4px 8px rgba(0,0,0,0.2);
+       ">
+  <p style="font-size:14px; color:#555; margin-top:8px;">
+    Effects of excessive alcohol consumption on the human body
+  </p>
+</div>
+<section id="r5-4" style="margin-top:40px;">
+
+  <h2>5.4 Fats</h2>
+
+  <!-- Definition -->
+  <h3>Definition of Fats</h3>
+  <p>
+    Fat is a type of organic carbon compound which contains carbon, hydrogen and oxygen elements.
+  </p>
+
+  <!-- Mind Map: Similarities of Saturated & Unsaturated Fats -->
+<div class="mindmap-fat">
+
+  <div class="center-node">
+    Similarities of<br>Fats
+  </div>
+
+  <div class="branch top">
+    Do not dissolve<br>in water
+  </div>
+
+  <div class="branch left">
+    Organic compounds<br>containing C, H & O
+  </div>
+
+  <div class="branch right">
+    Important source of<br>fatty acids
+  </div>
+
+</div>
+
+
+  <!-- Tree Map -->
+  <h3>Differences of Saturated Fats and Unsaturated Fats</h3>
+
+  <table style="
+    width:100%;
+    border-collapse:collapse;
+    margin:25px 0;
+    text-align:center;
+  ">
+    <tr style="background:#e5e7eb;">
+      <th style="border:1px solid #333; padding:10px;">Saturated Fats</th>
+      <th style="border:1px solid #333; padding:10px;">Differences</th>
+      <th style="border:1px solid #333; padding:10px;">Unsaturated Fats</th>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">Animal</td>
+      <td style="border:1px solid #333; padding:8px;">Source</td>
+      <td style="border:1px solid #333; padding:8px;">Plant</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">Solid</td>
+      <td style="border:1px solid #333; padding:8px;">State at room temperature</td>
+      <td style="border:1px solid #333; padding:8px;">Liquid</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">High</td>
+      <td style="border:1px solid #333; padding:8px;">Melting point</td>
+      <td style="border:1px solid #333; padding:8px;">Low</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">Maximum</td>
+      <td style="border:1px solid #333; padding:8px;">Number of hydrogen atoms in the molecule</td>
+      <td style="border:1px solid #333; padding:8px;">Not maximum</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">Not possible</td>
+      <td style="border:1px solid #333; padding:8px;">Addition of hydrogen atoms to molecule</td>
+      <td style="border:1px solid #333; padding:8px;">Possible</td>
+    </tr>
+  </table>
+
+  <!-- Effects -->
+  <h3>Effects of Eating Excessive Fats on Health</h3>
+  <ul>
+    <li>Gallstones and jaundice</li>
+    <li>Cholesterol deposited in the inner wall of arteries and atherosclerosis</li>
+  </ul>
+  <!-- Image Section -->
+<div style="
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+">
+  <img 
+    src="fat.png" 
+    alt="Effects of excessive fat consumption on health"
+    style="
+      width:70%;
+      max-width:500px;
+      border-radius:12px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    "
+  >
+</div>
+<!-- ================= 5.5 PALM OIL ================= -->
+<div id="r5-5" class="subtopic-title" style="background-image:url('palm-bg.jpg');">
+  <h1>5.5 Palm Oil 🌴</h1>
+</div>
+
+<section>
+
+  <!-- STRUCTURE OF OIL PALM FRUIT -->
+  <h3>Structure of Oil Palm Fruit</h3>
+
+  <div style="display:flex; justify-content:center; gap:30px; margin:30px 0; flex-wrap:wrap;">
+    <div style="border:2px solid #ffd700; padding:15px; border-radius:12px;">Pulp / Mesocarp</div>
+    <div style="border:2px solid #ffd700; padding:15px; border-radius:12px;">Shell / Endocarp</div>
+    <div style="border:2px solid #ffd700; padding:15px; border-radius:12px;">Kernel</div>
+  </div>
+
+  <table>
+    <tr>
+      <th>Part</th>
+      <th>Explanation</th>
+    </tr>
+    <tr>
+      <td>Pulp / Mesocarp</td>
+      <td>Contains the most palm oil</td>
+    </tr>
+    <tr>
+      <td>Shell / Endocarp</td>
+      <td>Does not contain oil</td>
+    </tr>
+    <tr>
+      <td>Kernel</td>
+      <td>Contains the best quality palm kernel oil</td>
+    </tr>
+  </table>
+
+  <!-- EXTRACTION PROCESS -->
+  <h3>Sequence in the Industrial Extraction Process of Palm Oil</h3>
+
+  <div style="display:flex; justify-content:center; margin:40px 0;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+
+      <div class="process-box">Bunch of oil palm fruits</div>
+      ⬇️
+      <div class="process-box">Sterilisation</div>
+      ⬇️
+      <div class="process-box">Threshing</div>
+      ⬇️
+      <div class="process-box">Digestion</div>
+
+      <div style="display:flex; gap:60px; margin-top:30px;">
+
+        <!-- LEFT -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <b>Pulp</b>
+          ⬇️
+          <div class="process-box">Extraction of palm oil</div>
+          ⬇️
+          <div class="process-box">Filtration</div>
+          ⬇️
+          <div class="process-box">Purification</div>
+          ⬇️
+          <div class="process-box">Pure palm oil</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <b>Kernel</b>
+          ⬇️
+          <div class="process-box">Extraction of palm kernel oil</div>
+          ⬇️
+          <div class="process-box">Filtration</div>
+          ⬇️
+          <div class="process-box">Pure palm kernel oil</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+ <h3>Palm oil is made up of 2 parts</h3>
+
+<div class="mindmap-container">
+  <div class="mindmap-center">Palm Oil</div>
+  <div class="mindmap-branch left">Glycerol</div>
+  <div class="mindmap-branch right">Fatty Acids</div>
+</div>
+
+
+
+<h3>Nutritional Content of Palm Oil</h3>
+
+<div class="mindmap-container">
+  <div class="mindmap-center">Palm Oil</div>
+  <div class="mindmap-branch top">Fats</div>
+  <div class="mindmap-branch left">Vitamins</div>
+  <div class="mindmap-branch right">Antioxidants</div>
+  <div class="mindmap-branch bottom">Less than 1% substances</div>
+</div>
+
+<h3>Use of Palm Oil in Healthcare and Food</h3>
+
+<div class="mindmap-container">
+  <div class="mindmap-center">Palm Oil</div>
+  <div class="mindmap-branch top">Cooking Oil</div>
+  <div class="mindmap-branch left">Food Products<br>(Margarine, Chocolate)</div>
+  <div class="mindmap-branch right">Healthcare<br>(Supplements, Cosmetics)</div>
+  <div class="mindmap-branch bottom">Soap</div>
+</div>
+
+<h3>Soap Production</h3>
+
+<table>
+  <tr>
+    <th>Aspect</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Chemical reaction</td>
+    <td>Oil + Alkali → Fatty acids in the salt (soap) + glycerol</td>
+  </tr>
+  <tr>
+    <td>Molecular components of soap</td>
+    <td>
+      <ul>
+        <li>Hydrophilic part – dissolves in water</li>
+        <li>Hydrophobic part – dissolves in oil or grease</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Cleansing action of soap</td>
+    <td>
+      Soap molecules remove greasy dirt by forming droplets that are rinsed away
+    </td>
+  </tr>
+</table>
+
+
+  <ol>
+    <li>Soap reduces surface tension of water</li>
+    <li>Hydrophobic part attaches to greasy dirt, hydrophilic part dissolves in water</li>
+    <li>Scrubbing dislodges greasy dirt into droplets</li>
+    <li>Greasy droplets are surrounded by soap molecules</li>
+    <li>Soap bubbles trap greasy droplets</li>
+    <li>Rinsing removes greasy dirt</li>
+  </ol>
+
+  <!-- SUSTAINABILITY -->
+  <h3>Scope of Sustainable Management and Its Importance</h3>
+
+  <table>
+    <tr>
+      <th>Scope</th>
+      <th>Importance</th>
+    </tr>
+    <tr>
+      <td>Land use</td>
+      <td>Replanting to optimise land use</td>
+    </tr>
+    <tr>
+      <td>Wastewater</td>
+      <td>Palm oil mill effluent is reused as fertiliser and biogas</td>
+    </tr>
+    <tr>
+      <td>Air quality</td>
+      <td>Oil palm trees absorb CO₂ and release oxygen</td>
+    </tr>
+    <tr>
+      <td>Oil palm waste</td>
+      <td>Recycled into useful by-products</td>
+    </tr>
+  </table>
+
+  <!-- IMAGE -->
+  <div style="text-align:center; margin:30px 0;">
+    <img src="palmoil.png" style="width:60%; max-width:500px; border-radius:12px;">
+  </div>
+
+  <!-- VIDEO -->
+  <div style="text-align:center; margin:30px 0;">
+    <video controls style="width:70%; max-width:600px; border-radius:12px;">
+      <source src="paloil.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+</section>
+
+
+
+
+
+<footer>Copyright © SciWorld 2026</footer>
+
+<script>
+function toggleSideNav() {
+  document.getElementById('sideNav').classList.toggle('side-nav-collapsed');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
